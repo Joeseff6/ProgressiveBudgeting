@@ -17,6 +17,9 @@ self.addEventListener("install", event => {
             console.log(`Service worker has been installed!`);
             self.skipWaiting();
         })
+        .catch(err => {
+            console.log(err);
+        })
     );
 });
 
@@ -38,6 +41,9 @@ self.addEventListener("activate", event => {
             );
         })
         .then(() => self.clients.claim())
+        .catch(err => {
+            console.log(err);
+        })
     );
 });
 
@@ -67,7 +73,10 @@ self.addEventListener("fetch", function(evt) {
         caches.open(CACHE_NAME).then(cache => {
         return cache.match(evt.request).then(response => {
             return response || fetch(evt.request);
-        });
+        })
+        .catch(err => {
+            console.log(err);
+        })
         })
     );
 });
