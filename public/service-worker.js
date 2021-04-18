@@ -1,8 +1,10 @@
 const FILES_TO_CACHE = [
     "/",
+    "/api/transaction",
     "/index.html",
     "/styles.css",
     "/index.js",
+    "/db/db.js"
 ];
 
 const CACHE_NAME = "static-cache-v1";
