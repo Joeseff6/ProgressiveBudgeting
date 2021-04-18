@@ -1,6 +1,5 @@
 const FILES_TO_CACHE = [
     "/",
-    "/api/transaction",
     "/index.html",
     "/styles.css",
     "/index.js",
